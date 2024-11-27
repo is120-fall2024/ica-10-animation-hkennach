@@ -1,1 +1,138 @@
 /* EDIT THESE STYLES FOR YOUR TASKS */
+
+/* Task 1 */
+.logo {
+    width: 50px;
+    height: auto;
+    transition: transform 0.5s ease, width 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Task 2 */
+.center-grid .box-2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 1em;
+    background-color: #333;
+    color: #f4f4f4;
+  }
+  
+.center-grid .box-2 .dynamic-quote {
+    position: relative;
+    font-size: 1.2em;
+    color: #f4f4f4;
+    text-align: center;
+  }
+  
+.center-grid .box-2 .dynamic-quote::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background-image: linear-gradient(to right, #87b0fc, #f4f4f4);
+    transition: width 0.3s ease-in-out;
+  }
+  
+.center-grid .box-2:hover .dynamic-quote::after {
+    width: 100%;
+  }
+
+/* Task 3 */
+@keyframes moveSquare {
+    0% {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    25% {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    50% {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    75% {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    100% {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+  
+.center-grid .box-3 {
+    animation: moveSquare 5s infinite;
+  }
+
+/* Task 4 */
+.notification {
+    position: fixed;
+    bottom: -100px;
+    right: 20px;
+    width: 300px;
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(0);
+  }
+  
+ 
+@keyframes slideIn {
+    0% {
+      bottom: -100px; 
+      opacity: 0;
+    }
+    20% {
+      bottom: 20px;
+      opacity: 1;
+    }
+    80% {
+      bottom: 20px;
+      opacity: 1;
+    }
+    100% {
+      bottom: -100px;
+      opacity: 0;
+    }
+  }
+  
+.notification {
+    animation: slideIn 10s ease-in-out infinite;
+  }
+  
+/* Task 5 */
+.center-grid .box-4 {
+    background-image: linear-gradient(135deg, #ff7eb3, #ff758c);
+    transition: transform 0.3s ease; 
+    filter: hue-rotate(0deg); 
+  }
+  
+.center-grid .box-4:hover {
+    animation: gradientChange 2s linear infinite;
+    transform: scale(1.1); 
+  }
+  
+@keyframes gradientChange {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  
